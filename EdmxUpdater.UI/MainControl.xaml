@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="EdmxUpdater.UI.MainControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:EdmxUpdater.UI.Model"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <vm:MainControlModel x:Key="viewModel" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Horizontal">
+            <Label>EDMX File:</Label>
+            <ComboBox Name="EdmxFileList" ItemsSource="{Binding MruEdmxFiles,Source={StaticResource ResourceKey=viewModel}}" SelectedValue="{Binding EdmxFile, Source={StaticResource ResourceKey=viewModel}}" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Label>Property Conventions</Label>
+            <CheckBox IsChecked="{Binding PropertyNoUnderscores, Source={StaticResource ResourceKey=viewModel}}">
+                <Label>No Underscores</Label>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding PropertyPascalCase, Source={StaticResource ResourceKey=viewModel}}">
+                <Label>Pascal Case</Label>
+            </CheckBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="1" Orientation="Horizontal" VerticalAlignment="Bottom">
+            <Button Click="Button_Click">Update EDMX File</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

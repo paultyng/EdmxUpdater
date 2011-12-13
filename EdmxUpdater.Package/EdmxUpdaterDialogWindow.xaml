@@ -1,0 +1,8 @@
+﻿<pui:DialogWindow x:Class="EdmxUpdater.EdmxUpdaterDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.10.0"
+        xmlns:ui="clr-namespace:EdmxUpdater.UI;assembly=EdmxUpdater.UI"
+        Title="EdmxUpdater" Height="300" Width="300">
+    <ui:MainControl Name="mc" />
+</pui:DialogWindow>
