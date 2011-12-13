@@ -16,3 +16,8 @@ I generated classes for the EDMX XSDs using **XSD.EXE**:
 *Note the ".\" on the last XSD path, this is a workaround for output file name being too long*
 
 And perform iteration over the entity types to update.
+
+## Todo
+
+* Clean up the UI
+* Post to Visual Studio extension gallery.
