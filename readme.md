@@ -21,3 +21,5 @@ And perform iteration over the entity types to update.
 
 * Clean up the UI
 * Post to Visual Studio extension gallery.
+* Prefix entity names (Db...)
+* Swap all access modifiers (to internal)
